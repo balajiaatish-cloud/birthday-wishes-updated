@@ -123,6 +123,23 @@
       background: radial-gradient(circle at bottom, #ffe6f0 0%, #ffffff 80%);
       z-index: 0;
     }
+    
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: pink;
+    top: -10px;
+    animation: fall 3s linear forwards;
+    border-radius: 50%;
+    z-index: 9999;
+  }
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+
   </style>
 </head>
 <body>
@@ -156,6 +173,7 @@
 
     function revealLetter() {
       letter.classList.add('show');
+      fireConfetti();
       if (music.paused) {
         music.volume = 0.3;
         music.play();
@@ -174,6 +192,19 @@
 
       setTimeout(() => heart.remove(), 6000);
     }, 400);
+    function fireConfetti(){
+  for (let i=0; i<100; i++){
+    let c = document.createElement('div');
+    c.classList.add('confetti');
+    c.style.left = Math.random()*100 + 'vw';
+    c.style.background = `hsl(${Math.random()*360}, 100%, 70%)`;
+    c.style.width = c.style.height = Math.random()*8 + 5 + 'px';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3000);
+  }
+}
+
   </script>
 </body>
 </html>
+
