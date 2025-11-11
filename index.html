@@ -1,210 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Shivani!</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Shivani!</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffe6f0, #fff5f5);
-      color: #333;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 650px;
-      margin: 70px auto;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 25px;
-      box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
-      backdrop-filter: blur(8px);
-      position: relative;
-      z-index: 10;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.8em;
-      color: #ff69b4;
-      margin-bottom: 20px;
-      text-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ff69b4; }
-      to { text-shadow: 0 0 25px #ff69b4, 0 0 40px #ff1493; }
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .envelope {
-      font-size: 4em;
-      cursor: pointer;
-      margin: 30px 0;
-      transition: transform 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-
-    .envelope:hover {
-      transform: scale(1.2);
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    .letter {
-      display: none;
-      background: #fff;
-      border: 2px solid #ff69b4;
-      border-radius: 15px;
-      padding: 25px;
-      margin-top: 20px;
-      font-size: 1.1em;
-      line-height: 1.7;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .letter.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    /* Floating hearts */
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .heart {
-      position: absolute;
-      color: rgba(255, 105, 180, 0.6);
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
-      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
-    }
-
-    /* Soft background overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at bottom, #ffe6f0 0%, #ffffff 80%);
-      z-index: 0;
-    }
-    
-  .confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: pink;
-    top: -10px;
-    animation: fall 3s linear forwards;
-    border-radius: 50%;
-    z-index: 9999;
-  }
-  @keyframes fall {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
-  }
-
-
-  </style>
-</head>
-<body>
-  <div class="overlay"></div>
-  <div class="hearts" id="hearts"></div>
-
-  <div class="container">
-    <h1>🎂 Happy Birthday Shivani! 🎂</h1>
-    <p style="font-size: 1.1em;">Tap the envelope to open your special birthday letter 💌</p>
-    <div class="envelope" onclick="revealLetter()">💌</div>
-
-    <div class="letter" id="letter">
-      <p>Happiest birthday to the sweetest person I know 🤭<br>
-      Can you believe we’ve only been friends for 5 months? It honestly feels like 5 years — probably because we’ve become so close.</p>
-      <p>I don’t even know how you tolerated me this long; you deserve a bravery award, not gonna lie 😂 But I’m glad you did. From our random chats to our video calls, every moment has been pure chaos, and I love that.</p>
-      <p>On your birthday, I want to say... may your phone always stay charged, your Wi-Fi never disconnect 😆<br>
-      You’re genuinely one of the best people I’ve met — funny, crazy, but still my favorite human. I hope this birthday brings you all the happiness, good food, and unlimited memes you deserve.</p>
-      <p>Thanks for being everything 💖</p>
-      <p>Happy Birthday, Shivani! Now go enjoy your day, and don’t forget to treat me too 😜</p>
-      <p style="font-weight: 600;">With fake seriousness and real love,<br>— Aatish 💫</p>
-    </div>
-  </div>
-
-  <audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_35e53ef6c0.mp3" type="audio/mp3">
-  </audio>
-
-  <script>
-    const letter = document.getElementById('letter');
-    const music = document.getElementById('bgMusic');
-
-    function revealLetter() {
-      letter.classList.add('show');
-      fireConfetti();
-      if (music.paused) {
-        music.volume = 0.3;
-        music.play();
-      }
-    }
-
-    // Floating hearts animation
-    const heartsContainer = document.getElementById('hearts');
-    setInterval(() => {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-      heart.innerText = '💖';
-      heartsContainer.appendChild(heart);
-
-      setTimeout(() => heart.remove(), 6000);
-    }, 400);
-    function fireConfetti(){
-  for (let i=0; i<100; i++){
-    let c = document.createElement('div');
-    c.classList.add('confetti');
-    c.style.left = Math.random()*100 + 'vw';
-    c.style.background = `hsl(${Math.random()*360}, 100%, 70%)`;
-    c.style.width = c.style.height = Math.random()*8 + 5 + 'px';
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),3000);
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #fff5f5);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  text-align: center;
 }
 
-  </script>
+/* container centered for laptop view */
+.container {
+  width: 90%;
+  max-width: 750px;   /* better laptop width */
+  margin: 60px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.6em;
+  color: #ff69b4;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ff69b4; }
+  to { text-shadow: 0 0 25px #ff69b4, 0 0 40px #ff1493; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.envelope {
+  font-size: 4em;
+  cursor: pointer;
+  margin: 25px 0;
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite;
+}
+.envelope:hover { transform: scale(1.2); }
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.letter {
+  display: none;
+  background: #fff;
+  border: 2px solid #ff69b4;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 20px;
+  font-size: 1.05em;
+  line-height: 1.7;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.letter.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* floating hearts */
+.hearts {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.heart {
+  position: absolute;
+  color: rgba(255,105,180,0.6);
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* background overlay */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at bottom, #ffe6f0 0%, #ffffff 80%);
+  z-index: 0;
+}
+
+/* dp image */
+.dp-photo {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%;
+  margin-top: 25px;
+  border: 5px solid #ff69b4;
+  box-shadow: 0 0 30px rgba(255,105,180,0.5);
+  filter: drop-shadow(0 0 25px rgba(255,105,180,0.45));
+  display: none;
+}
+
+/* slideshow tuned for laptop */
+.slideshow {
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto 0 auto;
+  position: relative;
+  display: none;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255,105,180,0.25);
+  background: rgba(255,255,255,0.3);
+}
+
+.slide {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+.slide.active { opacity: 1; }
+
+/* mild scaling for phone view (not responsive, just shrink) */
+@media (max-width: 768px) {
+  .container {
+    transform: scale(0.9);
+    margin: 20px auto;
+  }
+  h1 { font-size: 2em; }
+  .envelope { font-size: 3em; }
+  .dp-photo { width: 180px; height: 180px; }
+}
+</style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+  <h1>🎂 Happy Birthday Shivani! 🎂</h1>
+  <img class="dp-photo" id="dpPhoto" src="pic1.jpg">
+
+  <p style="font-size:1.1em;">Tap the envelope to open your special birthday letter 💌</p>
+  <div class="envelope" onclick="revealLetter()">💌</div>
+
+  <div class="letter" id="letter">
+    <p>Happiest birthday to the sweetest person I know 🤭<br>
+    manam frnds ayyi 5 months ee aithundhi telusaa?...</p>
+    <p>Thanks for being everything 💖</p>
+    <p>Happy Birthday, Bgrm! ... — Aatish 💫</p>
+
+    <div class="slideshow" id="slideShow">
+      <img class="slide" src="pic1.jpg">
+      <img class="slide" src="pic2.jpg">
+      <img class="slide" src="pic3.jpg">
+      <img class="slide" src="pic4.jpg">
+      <img class="slide" src="pic5.jpg">
+    </div>
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="birthday-music.mp3" type="audio/mp3">
+</audio>
+
+<script>
+document.addEventListener("touchstart", () => {
+  const music = document.getElementById("bgMusic");
+  if (music.paused) music.play().catch(()=>{});
+},{ once:true });
+
+function revealLetter(){
+  const letter = document.getElementById('letter');
+  const dp = document.getElementById('dpPhoto');
+  const slideshow = document.getElementById('slideShow');
+  const music = document.getElementById('bgMusic');
+
+  letter.classList.add('show');
+  dp.style.display = 'block';
+  slideshow.style.display = 'block';
+
+  if(music.paused){
+    music.volume = 0.3;
+    music.play().catch(()=>{});
+  }
+
+  let currentSlide=0;
+  const slides=document.querySelectorAll('.slide');
+  slides[currentSlide].classList.add('active');
+
+  setInterval(()=>{
+    slides[currentSlide].classList.remove('active');
+    currentSlide=(currentSlide+1)%slides.length;
+    slides[currentSlide].classList.add('active');
+  },4800);
+}
+</script>
 </body>
 </html>
-
